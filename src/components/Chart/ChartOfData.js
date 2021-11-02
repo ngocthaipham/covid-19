@@ -21,8 +21,8 @@ const ChartOfData = (props) => {
       .then((response) => {
         setCountryData(response);
       });
-  }, [isChange]);
-  const err = {};
+    }, [isChange]);
+    const err = {};
 
   const validDate = () => {
     if (
@@ -38,7 +38,7 @@ const ChartOfData = (props) => {
   };
   return (
     <>
-      {countryData.length > 1 ? (
+      {countryData.length > 1 && (
         <div>
           <form
             onSubmit={(e) => {
@@ -111,7 +111,8 @@ const ChartOfData = (props) => {
             }}
           />
         </div>
-      ) : ( <h3 style={{marginTop : "2rem", color: "red"}}>For performance reasons, can not get data !</h3>)}
+      )} 
+      {countryData.message && ( <h3 style={{marginTop : "2rem", color: "red"}}>For performance reasons, can not get data !</h3>)}
     </>
   );
 };
