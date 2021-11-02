@@ -1,22 +1,28 @@
 {
   "files": {
-    "main.css": "/covid-19/static/css/main.3b43fc0e.chunk.css",
-    "main.js": "/covid-19/static/js/main.dfe41b1a.chunk.js",
-    "main.js.map": "/covid-19/static/js/main.dfe41b1a.chunk.js.map",
-    "runtime-main.js": "/covid-19/static/js/runtime-main.f370791f.js",
-    "runtime-main.js.map": "/covid-19/static/js/runtime-main.f370791f.js.map",
-    "static/js/2.1a3ad31e.chunk.js": "/covid-19/static/js/2.1a3ad31e.chunk.js",
-    "static/js/2.1a3ad31e.chunk.js.map": "/covid-19/static/js/2.1a3ad31e.chunk.js.map",
-    "static/js/3.47c00b17.chunk.js": "/covid-19/static/js/3.47c00b17.chunk.js",
-    "static/js/3.47c00b17.chunk.js.map": "/covid-19/static/js/3.47c00b17.chunk.js.map",
+    "main.css": "/covid-19/static/css/main.f486cd19.chunk.css",
+    "main.js": "/covid-19/static/js/main.7fff45b7.chunk.js",
+    "main.js.map": "/covid-19/static/js/main.7fff45b7.chunk.js.map",
+    "runtime-main.js": "/covid-19/static/js/runtime-main.5ed93eee.js",
+    "runtime-main.js.map": "/covid-19/static/js/runtime-main.5ed93eee.js.map",
+    "static/js/2.6a272a6d.chunk.js": "/covid-19/static/js/2.6a272a6d.chunk.js",
+    "static/js/2.6a272a6d.chunk.js.map": "/covid-19/static/js/2.6a272a6d.chunk.js.map",
+    "static/js/3.d4a36125.chunk.js": "/covid-19/static/js/3.d4a36125.chunk.js",
+    "static/js/3.d4a36125.chunk.js.map": "/covid-19/static/js/3.d4a36125.chunk.js.map",
     "index.html": "/covid-19/index.html",
-    "static/css/main.3b43fc0e.chunk.css.map": "/covid-19/static/css/main.3b43fc0e.chunk.css.map",
-    "static/js/2.1a3ad31e.chunk.js.LICENSE.txt": "/covid-19/static/js/2.1a3ad31e.chunk.js.LICENSE.txt"
+    "static/css/main.f486cd19.chunk.css.map": "/covid-19/static/css/main.f486cd19.chunk.css.map",
+    "static/js/2.6a272a6d.chunk.js.LICENSE.txt": "/covid-19/static/js/2.6a272a6d.chunk.js.LICENSE.txt",
+    "static/media/alert.bfc6f3a3.svg": "/covid-19/static/media/alert.bfc6f3a3.svg",
+    "static/media/people-bg.d3c6089f.png": "/covid-19/static/media/people-bg.d3c6089f.png",
+    "static/media/people.209e653a.png": "/covid-19/static/media/people.209e653a.png",
+    "static/media/phone-white.7a53528b.svg": "/covid-19/static/media/phone-white.7a53528b.svg",
+    "static/media/phone.038aed82.svg": "/covid-19/static/media/phone.038aed82.svg",
+    "static/media/virus-white.90a42ad8.png": "/covid-19/static/media/virus-white.90a42ad8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f370791f.js",
-    "static/js/2.1a3ad31e.chunk.js",
-    "static/css/main.3b43fc0e.chunk.css",
-    "static/js/main.dfe41b1a.chunk.js"
+    "static/js/runtime-main.5ed93eee.js",
+    "static/js/2.6a272a6d.chunk.js",
+    "static/css/main.f486cd19.chunk.css",
+    "static/js/main.7fff45b7.chunk.js"
   ]
 }
