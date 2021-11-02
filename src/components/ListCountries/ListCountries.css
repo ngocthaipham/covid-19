@@ -1,9 +1,16 @@
 .star {
-    height : 24px;
-    width: 24px ;
+    height : 2.4rem;
+    width: 2.4rem ;
     float: right;
     cursor: pointer;
 }
 td {
     text-align: center;
+}
+
+#main {
+    text-align: center;
+}
+table {
+    margin: 5rem auto;
 }

@@ -53,6 +53,7 @@ const ChartOfData = (props) => {
           From
           <input
             defaultValue={dayFrom}
+            className="gradient"
             onChange={(e) => {
               setDayFrom(e.target.value);
             }}
@@ -62,12 +63,13 @@ const ChartOfData = (props) => {
           To
           <input
             defaultValue={dayTo}
+            className="gradient"
             onChange={(e) => {
               setDayTo(e.target.value);
             }}
           />
         </label>
-        <button type="submit">OK</button>
+        <button className="submit-btn btn" type="submit">OK</button>
         <br />
         {errMessage && <p style={{ color: "red" }}>{errMessage.regex}</p>}
         {errMessage && <p style={{ color: "red" }}>{errMessage.failed}</p>}

@@ -1,10 +1,12 @@
-import './App.css';
+import React from "react";
+import "./App.css";
 import ListCountries from './components/ListCountries/ListCountries';
+
 function App() {
   return (
-  <>
-  <ListCountries />
-  </>
+    <>
+        <ListCountries />
+    </>
   );
 }
 

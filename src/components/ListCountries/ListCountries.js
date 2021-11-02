@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import DetailPopup from "../Detail/DetailPopup";
 import outlineStar from "../../asserts/outlinestar.png";
 import fillStar from "../../asserts/fillstar.png";
-import './ListCountries.css';
+import "./ListCountries.css";
+import { css } from "@emotion/react";
+import HashLoader from "react-spinners/HashLoader";
+
+const override = css`
+  display: block;
+  margin: 30vh auto;
+`;
 
 const ListCountries = () => {
   const [list, setList] = useState([]);
@@ -36,74 +43,82 @@ const ListCountries = () => {
 
   return (
     <>
-      <div>
-        <h3>
-          Countries affected by Covid-19 sort by{" "}
-          <select
-            onChange={(e) => {
-              setSortType(e.target.value);
-            }}
-          >
-            <option>TotalConfirmed</option>
-            <option>TotalDeaths</option>
-            <option>TotalRecovered</option>
-          </select>
-        </h3>
-        <table border="1px" cellPadding="5px" cellSpacing="2px">
-          <thead>
-            <tr>
-              <th>Country</th>
-              <th>New Confirmed Cases</th>
-              <th>Total Confirmed Cases</th>
-              <th>New Death Cases</th>
-              <th>Total Death Cases</th> <th>New Recovered Cases</th>
-              <th>Total Recovered Cases</th>
-              <th>Last Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            {list.map((item) => (
-              <tr key={item.ID}>
-                <td>
-                  {item.Country}
-                  {localStorage.getItem(`${item.Country}`) !== item.Country ? (
-                    <img
-                      onClick={() => {
-                        bookmark(item.Country);
-                      }}
-                      src={outlineStar}
-                      alt="star"
-                      className="star"
-                    />
-                  ) : (
-                    <img
-                      onClick={() => {
-                        removeBookmark(item.Country);
-                      }}
-                      src={fillStar}
-                      alt="star"
-                      className="star"
-                    />
-                  )}
-                </td>
-                <td>{item.NewConfirmed}</td>
-                <td>{item.TotalConfirmed}</td>
-                <td>{item.NewDeaths}</td>
-                <td>{item.TotalDeaths}</td>
-                <td>{item.NewRecovered}</td>
-                <td>{item.TotalRecovered}</td>
-                <td>
-                  {item.Date.split("T")[0]}
-                  <DetailPopup
-                    CountryCode={item.CountryCode}
-                    CountrySlug={item.Slug}
-                  />
-                </td>
+      {list && (
+        <div id="main">
+          <h1>
+            Countries affected by Covid-19 sort by{" "}
+            <select
+              onChange={(e) => {
+                setSortType(e.target.value);
+              }}
+            >
+              <option>TotalConfirmed</option>
+              <option>TotalDeaths</option>
+              <option>TotalRecovered</option>
+            </select>
+          </h1>
+          <table border="1rem" cellPadding="5rem" cellSpacing="0rem">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>New Confirmed Cases</th>
+                <th>Total Confirmed Cases</th>
+                <th>New Death Cases</th>
+                <th>Total Death Cases</th> <th>New Recovered Cases</th>
+                <th>Total Recovered Cases</th>
+                <th>Last Updated</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {list.map((item) => (
+                <tr key={item.ID}>
+                  <td>
+                    {item.Country}
+                    {localStorage.getItem(`${item.Country}`) !==
+                    item.Country ? (
+                      <img
+                        onClick={() => {
+                          bookmark(item.Country);
+                        }}
+                        src={outlineStar}
+                        alt="star"
+                        className="star"
+                      />
+                    ) : (
+                      <img
+                        onClick={() => {
+                          removeBookmark(item.Country);
+                        }}
+                        src={fillStar}
+                        alt="star"
+                        className="star"
+                      />
+                    )}
+                  </td>
+                  <td>{item.NewConfirmed}</td>
+                  <td>{item.TotalConfirmed}</td>
+                  <td>{item.NewDeaths}</td>
+                  <td>{item.TotalDeaths}</td>
+                  <td>{item.NewRecovered}</td>
+                  <td>{item.TotalRecovered}</td>
+                  <td>
+                    {item.Date.split("T")[0]}
+                    <DetailPopup
+                      CountryCode={item.CountryCode}
+                      CountrySlug={item.Slug}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {!list && (
+        <div id="main">
+          <HashLoader css={override} color={"36D7B7"} />
+        </div>
+      )}
     </>
   );
 };

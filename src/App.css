@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  font-size: calc(100vw / 192);
+}
+body {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+select,option,td {
+  font-size: 1.5rem;
+  line-height: 1.4em;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+  padding: 0rem 2rem;
+}
+th { 
+    font-size: 2rem;
+    line-height: 1.4em;
+    letter-spacing: -0.005em;
+    font-weight: 400;
+    padding: 0rem 2rem;
+}
+h1 {
+  font-size: 6rem;
+  line-height: 1em;
+  font-weight: 200;
+  letter-spacing: -0.005em;
+  line-height: 1.1em;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
