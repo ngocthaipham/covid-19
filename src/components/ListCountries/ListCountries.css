@@ -1,0 +1,9 @@
+.star {
+    height : 24px;
+    width: 24px ;
+    float: right;
+    cursor: pointer;
+}
+td {
+    text-align: center;
+}

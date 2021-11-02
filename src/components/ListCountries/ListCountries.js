@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DetailPopup from "../Detail/DetailPopup";
+import outlineStar from "../../asserts/outlinestar.png";
+import fillStar from "../../asserts/fillstar.png";
+import './ListCountries.css';
 
 const ListCountries = () => {
   const [list, setList] = useState([]);
   const [sortType, setSortType] = useState(`TotalConfirmed`);
+  const [isChange, setIsChange] = useState(false);
 
   useEffect(() => {
     fetch(`https://api.covid19api.com/summary`)
@@ -20,6 +24,15 @@ const ListCountries = () => {
         }
       );
   }, [sortType]);
+
+  const bookmark = (country) => {
+    localStorage.setItem(`${country}`, [country]);
+    setIsChange(!isChange);
+  };
+  const removeBookmark = (country) => {
+    localStorage.removeItem(`${country}`);
+    setIsChange(!isChange);
+  };
 
   return (
     <>
@@ -51,7 +64,28 @@ const ListCountries = () => {
           <tbody>
             {list.map((item) => (
               <tr key={item.ID}>
-                <td>{item.Country}</td>
+                <td>
+                  {item.Country}
+                  {localStorage.getItem(`${item.Country}`) !== item.Country ? (
+                    <img
+                      onClick={() => {
+                        bookmark(item.Country);
+                      }}
+                      src={outlineStar}
+                      alt="star"
+                      className="star"
+                    />
+                  ) : (
+                    <img
+                      onClick={() => {
+                        removeBookmark(item.Country);
+                      }}
+                      src={fillStar}
+                      alt="star"
+                      className="star"
+                    />
+                  )}
+                </td>
                 <td>{item.NewConfirmed}</td>
                 <td>{item.TotalConfirmed}</td>
                 <td>{item.NewDeaths}</td>

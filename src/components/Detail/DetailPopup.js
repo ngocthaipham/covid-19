@@ -22,7 +22,6 @@ const DetailPopup = (props) => {
   <div>
       <input type="button" value="Detail" onClick={togglePopup} />
     {isOpen && countryDetail && (
-      <div>
       <div className="popup-box">
         <div className="box">
           <div>
@@ -40,7 +39,6 @@ const DetailPopup = (props) => {
             <ChartOfData CountrySlug={props.CountrySlug} />
           </div>
         </div>
-      </div>
       </div>
     )}
   </div>
