@@ -28,7 +28,7 @@ const DetailPopup = (props) => {
   <div>
       <input type="button" value="Detail" onClick={togglePopup} className="detail-btn btn" />
       {isOpen && !countryDetail && 
-        <div className="popup-box">
+        <div className="popup-box" style={{zIndex : 5}}>
         <div className="box" style={{height: "70vh"}}>
             <span className="close-icon" onClick={togglePopup}>
               x
@@ -38,7 +38,7 @@ const DetailPopup = (props) => {
       </div>
       }
     {isOpen && countryDetail && (
-      <div className="popup-box">
+      <div className="popup-box" style={{zIndex : 5}}>
         <div className="box">
           <div>
             <span className="close-icon" onClick={togglePopup}>

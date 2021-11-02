@@ -16,21 +16,46 @@ const ListCountries = () => {
   const [sortType, setSortType] = useState(`TotalConfirmed`);
   const [isChange, setIsChange] = useState(false);
 
+  const values = [];
+  const keys = Object.keys(localStorage);
+  for (let i = 0; i < keys.length; i++) {
+    values.push(localStorage.getItem(keys[i]));
+  }
+  const filter = (arr) => {
+    arr.sort((a, b) => b[sortType] - a[sortType]);
+    return arr;
+  };
   useEffect(() => {
     fetch(`https://api.covid19api.com/summary`)
       .then((res) => res.json())
       .then(
         (response) => {
-          const sorted = response.Countries.sort(
-            (a, b) => b[sortType] - a[sortType]
-          );
+          const bookmarkCountries = [];
+          let nonBookmarkCountries = [];
+          response.Countries.forEach((country) => {
+            if (values.length === 0) {
+              return nonBookmarkCountries.push(country);
+            }
+            for (let i = 0; i < values.length; i++) {
+              if (country.Country === values[i]) {
+                bookmarkCountries.push(country);
+              }
+              nonBookmarkCountries = response.Countries.filter(
+                (item) => !values.includes(item.Country)
+              );
+            }
+          });
+          const sorted = [
+            ...filter(bookmarkCountries),
+            ...filter(nonBookmarkCountries),
+          ];
           setList(sorted);
         },
         (error) => {
           alert(error.message);
         }
       );
-  }, [sortType]);
+  }, [sortType, isChange]);
 
   const bookmark = (country) => {
     localStorage.setItem(`${country}`, [country]);
@@ -44,7 +69,7 @@ const ListCountries = () => {
   return (
     <>
       {list && (
-        <div id="main">
+        <div>
           <h1>
             Countries affected by Covid-19 sort by{" "}
             <select
@@ -73,7 +98,6 @@ const ListCountries = () => {
               {list.map((item) => (
                 <tr key={item.ID}>
                   <td>
-                    {item.Country}
                     {localStorage.getItem(`${item.Country}`) !==
                     item.Country ? (
                       <img
@@ -94,13 +118,14 @@ const ListCountries = () => {
                         className="star"
                       />
                     )}
+                    <div style={{ width: "25rem" }}>{item.Country}</div>
                   </td>
-                  <td>{item.NewConfirmed}</td>
-                  <td>{item.TotalConfirmed}</td>
-                  <td>{item.NewDeaths}</td>
-                  <td>{item.TotalDeaths}</td>
-                  <td>{item.NewRecovered}</td>
-                  <td>{item.TotalRecovered}</td>
+                  <td className="data">{item.NewConfirmed}</td>
+                  <td className="data">{item.TotalConfirmed}</td>
+                  <td className="data">{item.NewDeaths}</td>
+                  <td className="data">{item.TotalDeaths}</td>
+                  <td className="data-green">{item.NewRecovered}</td>
+                  <td className="data-green">{item.TotalRecovered}</td>
                   <td>
                     {item.Date.split("T")[0]}
                     <DetailPopup

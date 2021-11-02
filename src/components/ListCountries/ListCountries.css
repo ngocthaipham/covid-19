@@ -1,16 +1,49 @@
 .star {
     height : 2.4rem;
     width: 2.4rem ;
-    float: right;
     cursor: pointer;
+    position : absolute;
+   left: 7rem;
 }
 td {
     text-align: center;
+    display: table-cell;
+    vertical-align: inherit;
 }
 
 #main {
     text-align: center;
+    margin : 0rem 5rem;
 }
 table {
     margin: 5rem auto;
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    border-color: grey;
+
+}
+thead {
+    --tw-bg-opacity: 1;
+    background-color: rgba(249,250,251,var(--tw-bg-opacity));
+    vertical-align: middle;
+}
+tr {
+    border: none
+}
+th {
+    --tw-text-opacity: 1;
+    color: rgba(107,114,128,var(--tw-text-opacity));
+    letter-spacing: .05em;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.data {
+    color: #eb4559;
+}
+.data-green {
+    color: #55C882;
 }

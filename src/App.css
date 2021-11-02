@@ -11,19 +11,23 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
 }
-select,option,td {
-  font-size: 1.5rem;
+select,
+option,
+td {
+  font-size: 1.7rem;
+  line-height: 1.4em;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+  padding: 0rem 4rem;
+}
+th {
+  font-size: 2rem;
   line-height: 1.4em;
   letter-spacing: -0.005em;
   font-weight: 400;
   padding: 0rem 2rem;
-}
-th { 
-    font-size: 2rem;
-    line-height: 1.4em;
-    letter-spacing: -0.005em;
-    font-weight: 400;
-    padding: 0rem 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 h1 {
   font-size: 6rem;
