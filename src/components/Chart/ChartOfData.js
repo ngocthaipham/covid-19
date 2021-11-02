@@ -47,7 +47,6 @@ const ChartOfData = (props) => {
         onSubmit={(e) => {
           e.preventDefault();
           validDate();
-        // setIsChange(!isChange);
         }}
       >
         <label>

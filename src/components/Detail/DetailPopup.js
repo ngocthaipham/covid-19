@@ -20,12 +20,9 @@ const DetailPopup = (props) => {
   return (
     <>
   <div>
-    {!isOpen && (
       <input type="button" value="Detail" onClick={togglePopup} />
-    ) }
     {isOpen && countryDetail && (
       <div>
-       <input type="button" value="Detail" onClick={togglePopup} />
       <div className="popup-box">
         <div className="box">
           <div>
