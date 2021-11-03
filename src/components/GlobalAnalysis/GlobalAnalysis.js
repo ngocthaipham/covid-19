@@ -34,21 +34,21 @@ const GlobalAnalysis = () => {
         {globalData && country && (
           <div className="global-data-wrap">
             <div className="global-data-flex-item">
-              <h2 className="counter">{country.length}</h2>
+              <h2 className="counter">{country.length.toLocaleString()}</h2>
               <p>Affected country</p>
             </div>
             <div className="global-data-flex-item">
-              <h2 className="counter">{globalData.TotalConfirmed}</h2>
+              <h2 className="counter">{globalData.TotalConfirmed.toLocaleString()}</h2>
               <p>Confirmed Cases</p>
             </div>
             <div className="global-data-flex-item">
               <h2 className="counter green-counter">
-                {globalData.TotalRecovered}
+                {globalData.TotalRecovered.toLocaleString()}
               </h2>
               <p>Recovered Cases</p>
             </div>
             <div className="global-data-flex-item">
-              <h2 className="counter">{globalData.TotalDeaths}</h2>
+              <h2 className="counter">{globalData.TotalDeaths.toLocaleString()}</h2>
               <p>Worldwide Deaths</p>
             </div>
             <img src={virusWhite} className="vw1" alt="Virus" />

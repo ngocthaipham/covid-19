@@ -54,16 +54,16 @@
   margin: 1rem;
 }
 .submit-btn {
-  border-radius: 0.3rem;
+  border-radius: 3px;
   background-color: #fff;
   border: 0.2rem solid;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  font-size: 1.5rem;
-  height: 2rem;
-  /* width: 5rem; */
-  /* margin-left: 3rem; */
+  font-size: 2rem;
+  height: 3rem;
+  width: 4rem;
   cursor: pointer;
+  margin: 1.5rem;
 }
 .btn:hover  {
   background: #f8d24a;

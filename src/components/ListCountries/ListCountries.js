@@ -73,13 +73,14 @@ const ListCountries = () => {
           <h1>
             Countries affected by Covid-19 sort by{" "}
             <select
+            className="filter"
               onChange={(e) => {
                 setSortType(e.target.value);
               }}
             >
-              <option>TotalConfirmed</option>
-              <option>TotalDeaths</option>
-              <option>TotalRecovered</option>
+              <option className="op-1" >TotalConfirmed</option>
+              <option className="op-2">TotalDeaths</option>
+              <option className="op-3">TotalRecovered</option>
             </select>
           </h1>
           <table border="1rem" cellPadding="5rem" cellSpacing="0rem">
@@ -120,12 +121,12 @@ const ListCountries = () => {
                     )}
                     <div style={{ width: "25rem" }}>{item.Country}</div>
                   </td>
-                  <td className="data">{item.NewConfirmed}</td>
-                  <td className="data">{item.TotalConfirmed}</td>
-                  <td className="data">{item.NewDeaths}</td>
-                  <td className="data">{item.TotalDeaths}</td>
-                  <td className="data-green">{item.NewRecovered}</td>
-                  <td className="data-green">{item.TotalRecovered}</td>
+                  <td className="data">{item.NewConfirmed.toLocaleString()}</td>
+                  <td className="data">{item.TotalConfirmed.toLocaleString()}</td>
+                  <td className="data">{item.NewDeaths.toLocaleString()}</td>
+                  <td className="data">{item.TotalDeaths.toLocaleString()}</td>
+                  <td className="data-green">{item.NewRecovered.toLocaleString()}</td>
+                  <td className="data-green">{item.TotalRecovered.toLocaleString()}</td>
                   <td>
                     {item.Date.split("T")[0]}
                     <DetailPopup

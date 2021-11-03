@@ -32,7 +32,7 @@ const Banner = () => {
                 <img src={virusWhite} alt="Virus" />
                 </div>
                 <p className="alert">
-                    <img src={alert} alt="alert" />
+                    <img src={alert} alt="alert" style={{marginRight: "0.5rem"}} />
                     Covid-19 Alert
                 </p>
                 <h1>Save yourself Save the world.</h1>

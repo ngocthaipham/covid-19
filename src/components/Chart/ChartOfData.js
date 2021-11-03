@@ -46,7 +46,7 @@ const ChartOfData = (props) => {
               validDate();
             }}
           >
-            <label for="start">Start date:</label>
+            <label for="start">Start :</label>
 
             <input
               type="date"
@@ -58,7 +58,7 @@ const ChartOfData = (props) => {
               }}
             />
 
-            <label for="end">To date:</label>
+            <label for="end">To :</label>
 
             <input
               type="date"
@@ -69,12 +69,14 @@ const ChartOfData = (props) => {
                 setDayTo(e.target.value);
               }}
             />
+            <br/>
             <button className="submit-btn btn" type="submit">
               OK
             </button>
             <br />
             {errMessage && <p style={{ color: "red" }}>{errMessage.failed}</p>}
           </form>
+          <article>
           <Line
             data={{
               labels: countryData.map((data) => data.Date.split("T")[0]),
@@ -100,16 +102,18 @@ const ChartOfData = (props) => {
               ],
             }}
             options={{
-              title: {
-                display: true,
-                text: "World population per region (in millions)",
-              },
-              legend: {
-                display: true,
-                position: "bottom",
-              },
+              // title: {
+              //   display: true,
+              //   text: "World population per region (in millions)",
+              // },
+              // legend: {
+              //   display: true,
+              //   position: "bottom",
+              // },
+              maintainAspectRatio: false,
             }}
           />
+          </article>
         </div>
       )} 
       {countryData.message && ( <h3 style={{marginTop : "2rem", color: "red"}}>For performance reasons, can not get data !</h3>)}
