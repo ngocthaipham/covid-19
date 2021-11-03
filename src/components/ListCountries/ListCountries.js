@@ -127,7 +127,7 @@ const ListCountries = () => {
                   <td className="data">{item.TotalDeaths.toLocaleString()}</td>
                   <td className="data-green">{item.NewRecovered.toLocaleString()}</td>
                   <td className="data-green">{item.TotalRecovered.toLocaleString()}</td>
-                  <td>
+                  <td className="data-date">
                     {item.Date.split("T")[0]}
                     <DetailPopup
                       CountryCode={item.CountryCode}
