@@ -9,10 +9,8 @@ function App() {
   return (
     <>
     <div id="main">
-      {/* <div className="header-mb"> */}
         <Banner />
-        <GlobalAnalysis />
-      {/* </div> */}
+        <GlobalAnalysis url={`https://api.covid19api.com/summary`} />
         <ListCountries />
     </div>
     </>

@@ -9,12 +9,13 @@ const override = css`
   margin: auto;
 `;
 
-const GlobalAnalysis = () => {
+const GlobalAnalysis = (props) => {
+  const { url } = props ;
   const [globalData, setGlobalData] = useState();
   const [country, setCountry] = useState();
 
   useEffect(() => {
-    fetch(`https://api.covid19api.com/summary`)
+    fetch(url)
       .then((res) => res.json())
       .then((response) => {
         setGlobalData(response.Global);
@@ -24,9 +25,11 @@ const GlobalAnalysis = () => {
   return (
     <>
       {!globalData && !country && (
+            <div id="loading">
         <div className="global-data-container">
           <div className="global-data-wrap">
             <HashLoader css={override} color={"36D7B7"} />
+            </div>
           </div>
         </div>
       )}
